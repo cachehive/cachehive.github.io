@@ -1,0 +1,31 @@
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import FontAwesome from 'react-fontawesome';
+import Footer from './footer';
+import Header from './header';
+import Modal from 'react-modal';
+import ReactGA from 'react-ga';
+//import Navigate from './navigate'
+import MenuWrap from './menuwrap';
+
+class App extends React.Component {
+  
+  constructor(props) {
+    super(props);
+  }
+  
+  render() {
+    return (
+       <div>
+          <MenuWrap />
+       </div>
+    );
+  }
+}
+
+//export default App;
+//document.addEventListener( 'DOMContentLoaded', () => {
+//    ReactDOM.render( <App />, document.getElementById('root') );
+//    Modal.setAppElement( document.getElementById('root') );
+//});

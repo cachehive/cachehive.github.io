@@ -5,7 +5,11 @@ import Footer from './footer';
 import Header from './header';
 import Modal from 'react-modal';
 import ReactGA from 'react-ga';
-import BurgerNav from './burgernav'
+import Contact from './contact';
+import Portfolio from './portfolio';
+import About from './about';
+import Jumbotron from 'react-bootstrap/lib/Jumbotron';
+import Button from 'react-bootstrap/lib/Button';
 
 class App extends React.Component {
   
@@ -13,23 +17,24 @@ class App extends React.Component {
     super(props);
   }
   
-  render() {
+render() {
     return (
-       <div>
-           <BurgerNav />
-         <div>
-           <Header title="The cacheHive website"/>
-         </div>
-         <div>
-             <p>Practice Area</p>
-             <Ok2Delete />
-         </div>
-         <div>Hello cacheHive</div>
-         <div>
-           <Footer />
-         </div>
-       </div>
-    );
+        <div>
+            <Header title = 'the stuff' />
+            <Jumbotron className="jumbotron-container">
+                <h1 className="slogan">Thought centric innovation</h1>
+                <p className="service-mark">The tools that got us here are no longer effective.  We are creating elegant solutions for an accelerated unfolding future. ( for where the new economy is heading )</p>
+                
+
+                <div className="down-arrow" onClick={this.props.downArrowClick}>
+                    <a><i className="fa fa-arrow-circle-down fa-4x"></i></a>
+                </div>
+            </Jumbotron>
+            <About />
+            <Portfolio />
+            <Footer />
+        </div>
+      );
   }
 }
 
