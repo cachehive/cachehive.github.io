@@ -17,19 +17,19 @@ class Header extends React.Component {
   
 	render() {
 		return ( 
-			 <div>
-                <Navbar>
+			<div className="header">
+          	    <Navbar>
 	                <Navbar.Header>
-				      <Navbar.Brand>
-				        <a href="#">cachehive.com</a>
-				      </Navbar.Brand>
+				    	<Navbar.Brand>
+				        	<a href="#">cachehive.com</a>
+				      	</Navbar.Brand>
 				    </Navbar.Header>
 					<Nav pullRight>
-				     <NavDropdown eventKey={3} title="" id="basic-nav-dropdown">
-				        <NavItem eventKey={3.1} href="#about">About</NavItem>
-				        <NavItem eventKey={3.2} href="#portfolio">Portfolio</NavItem>
-				        <NavItem eventKey={3.3} href="#contact">Contact</NavItem>
-				      </NavDropdown>
+				    	<NavDropdown eventKey={3} title="" id="basic-nav-dropdown">
+				        	<NavItem eventKey={3.1} href="#about-container">About</NavItem>
+				        	<NavItem eventKey={3.2} href="#portfolio-container">Portfolio</NavItem>
+				        	<NavItem eventKey={3.3} href="#contact-container">Contact</NavItem>
+				      	</NavDropdown>
 				    </Nav>
 			  	</Navbar>
 			</div>

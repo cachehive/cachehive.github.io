@@ -3,7 +3,7 @@ import React from 'react';
 class Portfolio extends React.Component {
     render () {
 	    return (
-	    	<div>
+	    	<div className="portfolio-container">
 	    		<h3>Portfolio</h3><br />
 	    		We are currently hard at work on several projects and we look forward to sharing them with you soon
 	    		<br />

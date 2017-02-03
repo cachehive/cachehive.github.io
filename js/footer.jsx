@@ -11,7 +11,7 @@ class Footer extends React.Component {
   
       render () {
         return (
-          <div className="footer-container">
+          <div className="footer">
               <div className="join-container">
               <form action="//cachehive.us15.list-manage.com/subscribe/post?u=6ffde59ec6305ed2496e15c84&amp;id=c877def6a3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="subscribe-form" novalidate="novalidate" target="_blank">
                   <h2 className="footer-title">Get the scoop!</h2>

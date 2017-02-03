@@ -12,7 +12,7 @@ class About extends React.Component {
   
 	render() {
 		return ( 
-			 <div>
+			 <div className="about-container">
 			 About
 Header (if needed): Problems Solved. (or Millennial Problems Solved?)
 
