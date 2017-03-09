@@ -1,0 +1,41 @@
+
+/* variables */
+
+@butter: #FEDC3D;
+@black:  #000000;
+@azure:  #01ABAA;
+@peach:  #FEA680;
+
+/* Palette Component */
+.colorBox {
+  float: right;
+  border-radius: 15px 50px 30px 5px;
+  width: 100px;
+  height: 100px;
+  margin: 15px;
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.butter {
+  background: @butter;
+}
+
+.black {
+  background: @black;
+}
+
+.azure {
+  background: @azure;
+}
+
+.peach {
+  background: @peach;
+}
+
+#grad {
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left,rgba(47,79,79,0),rgba(119,136,153,1)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(right,rgba(47,79,79,0),rgba(119,136,153,1)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(right,rgba(47,79,79,0),rgba(119,136,153,1)); /*Fx 3.6-15*/
+  background: linear-gradient(to right, rgba(47,79,79,0), rgba(119,136,153,1)); /*Standard*/
+}
