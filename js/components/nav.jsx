@@ -17,6 +17,12 @@ export default class Nav extends React.Component {
 
     onClick(route) {
         Actions.navigate(route);
+        console.log( "onClick from Nav: " + route );
+    }
+
+    handleClick(e) {
+        e.preventDefault();
+        console.log('The link was clicked.' + e );
     }
 
     render() {
@@ -52,7 +58,7 @@ export default class Nav extends React.Component {
                     <div className={"navbar-collapse " + navClass} id="collapsible-navbar">
                         <div className="nav navbar-nav">
                
-                            <a className="nav-item nav-link" onClick={this.toggleCollapse.bind(this)} >
+                            <a className="nav-item nav-link" onClick={this.toggleCollapse.bind(this), this.handleClick.bind(this) } >
                                 <i className="fa fa-home fa-2x"></i>
                                 <p>Home</p>
                             </a>

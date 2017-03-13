@@ -1,8 +1,8 @@
 import React from 'react';
 import NavBrand from './nav-brand';
 import NavCollapsed from './nav-collapsed';
-//import NavLinks from './nav-links';
-//import NavToolbar from './nav-toolbar';
+import NavLinks from './nav-links';
+import NavToolbar from './nav-toolbar';
 import Actions from '../../actions';
  
 class NavBar extends React.Component {
@@ -15,9 +15,8 @@ class NavBar extends React.Component {
 //        const { collapsed } = this.state;
 //        const navClass = collapsed ? "collapse" : "";
 //        <div className={"navbar-collapse " + navClass} id="collapsible-navbar">
-        let handler0 = event => { return this.onClick('home', event); };
-        let handler1 = event => { return this.onClick('about', event); };
-         
+        let handler = event => { return this.onClick('pages', event); };
+          
         return (
             <header>
                 <div className="navbar-header">
@@ -32,16 +31,20 @@ class NavBar extends React.Component {
                         <div className="pull-right">
                   
                             <li className="nav-item">
-                                <a onClick={handler0} >
-                                    <i className="fa fa-home fa-2x"></i>
+                                <a onClick={ this.handler }>
                                     <p>Home</p>
                                 </a >
                             </li>
                   
                             <li className="nav-item">
-                                <a onClick={handler1} >
-                                    <i className="fa fa-file-text fa-2x"></i>
+                                <a onClick={ this.handler }>
                                     <p>About</p>
+                                </a>
+                            </li>
+
+                            <li className="nav-item">
+                                <a onClick={ this.handler }>
+                                    <p>Portfolio</p>
                                 </a>
                             </li>
 

@@ -1,4 +1,4 @@
- import React from 'react';
+import React from 'react';
 
 class Footer extends React.Component {
     constructor(props) {
@@ -7,9 +7,11 @@ class Footer extends React.Component {
   
       render () {
         return (
-          <div className="footer-content">          
-              <p className="copyright-content">© 2017 cachehive.com. All Rights Reserved.</p>
-          </div>
+            <div className="footer-container flex-container">
+                <div className="footer-content">
+                    <div className="copyright-content">© 2017 cachehive.com. All Rights Reserved.</div>
+                </div>
+            </div>
         );
       }
 }

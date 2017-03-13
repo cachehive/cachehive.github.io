@@ -4,7 +4,7 @@ import React from 'react';
 class NavLinks extends React.Component {
 
     onClick(route) {
-//        Actions.navigate(route);
+        Actions.navigate(route);
     }
 
     render() {

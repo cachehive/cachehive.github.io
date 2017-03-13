@@ -1,10 +1,25 @@
 import React from 'react';
 
 export default class Join extends React.Component {
+    
+    handleEmailEntry(e) {
+    	const entry = e.target.value;
+    	this.props.submitEmail( entry ); 
+    }
+
+
     render () {
 	    return (
-    		<div className="join-container">
-	            <form action="//cachehive.us15.list-manage.com/subscribe/post?u=6ffde59ec6305ed2496e15c84&amp;id=c877def6a3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="subscribe-form" novalidate="novalidate" target="_blank">
+    		<div className="join-container flex-container">
+	            <input type="email" onChange={this.handleEmailEntry.bind(this)} value={this.props.email} name="EMAIL" className="join-email-input" />
+	            <input type="submit" value="Join" name="submit" className="button btn-primary join-button" />
+            </div>
+		);
+	}
+};
+
+/*
+<form action="//cachehive.us15.list-manage.com/subscribe/post?u=6ffde59ec6305ed2496e15c84&amp;id=c877def6a3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="subscribe-form" novalidate="novalidate" target="_blank">
 	                <h2 className="join-title">Get the scoop!</h2>
 	                <div className="form-group">
 	                    <label for="mce-EMAIL" className="sr-only"></label>
@@ -21,7 +36,4 @@ export default class Join extends React.Component {
 	                    <input type="submit" value="Join" name="submit" className="button btn-primary join-button"/>
 	                </div>
 	            </form>
-            </div>
-		);
-	}
-};
+*/

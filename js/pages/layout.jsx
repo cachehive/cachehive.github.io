@@ -1,22 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import Modal from 'react-modal';
 
-//import Footer from '../components/footer';
-//import NavBar from '../components/nav-bar/nav-bar';
-import NavBar from '../components/nav';
+import NavBar from '../components/nav-bar/nav-bar';
+//import NavBar from '../components/nav';
 import Palette from '../components/palette';
-
-//import Header from '../components/header';
-import About from './about';
-//import Contact from './contact';
+import Jumbo from '../components/jumbo';
 import Portfolio from './portfolio';
+import About from './about';
+
 
 export default class Layout extends React.Component {
 
-    constructor(props) {
-      super(props);
-      this.state = { scrollState: 0 };
+    constructor() {
+        super();
+        this.state = { scrollState: 0 };
+        this.state = { email: 'Enter Email' };
     }
 
     componentDidMount () {
@@ -60,24 +58,26 @@ export default class Layout extends React.Component {
         console.log(to);
     }
 
+    submitEmail( email ) {
+        this.setState({ email });
+    }
+
   
     render() {
-
+        // `<NavBar index={this.state.pages} route={this.state.route}/>
+                
+                
         return (
             <div> 
-                <NavBar index={this.state.pages} route={this.state.route}/>
-                <section className="jumbotron">
-                    <h1 className="slogan">thought centric innovation</h1>
-                    <p className="service0">The tools that got us here are no longer effective.</p>
-                    <p className="service1">We use technology to create elegant solutions for this accelerated and ever evolving economy.</p>
-                    <Palette />
+                <section className="jumbotron" id="home">
+                    <Jumbo />
+                </section> 
+                <section className="about" id="about">
+                    <About />
                 </section> 
                 <section className="portfolio" id="portfolio">
-                    <Portfolio />
-                </section>   
-                <section className="about" id="about">
-                        <About />
-                </section>  
+                    <Portfolio submitEmail={this.submitEmail.bind(this)} email={this.state.email} />
+                </section>
             </div>
         );
     }
