@@ -9,6 +9,9 @@ License: MIT;
 */
 
 /* Add a clear css file import here. */
+//@implort 'clear.less';
+@import 'var.less';
+
 
 /* Layout */
 html body {
@@ -17,8 +20,6 @@ html body {
     overflow-x: hidden;
 //  overflow-y: hidden;
 }
-
-
 
 /* Sections */    
 section {
@@ -29,12 +30,17 @@ section {
   width: 100vw;
   height: 100vh;
   box-sizing: content-box;
-  border: 4px dashed #DD2299;
+//  border: 4px dashed #DD2299;
 }
 
-@import 'pallette.less';
+// fonts
+// font-family: 'Abril Fatface', cursive;
+// font-family: 'PT Sans', sans-serif;
+
+//@import 'pallette.less';
 @import 'jumbo.less';
 @import 'navbar.less';
-@import 'portfolio.less';
 @import 'about.less';
-@import 'community.less';
+@import 'portfolio.less';
+@import 'footer.less';
+//@import 'community.less';

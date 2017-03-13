@@ -1,0 +1,88 @@
+/* The global variables */ 
+
+
+/* colors */
+@butter: #FEDC3D;
+@black:  #000000;
+@azure:  #01ABAA;
+@peach:  #FEA680;
+
+@color-lightsalmon: #FCA683;
+@color-lightseagreen: #1CAAA9;
+@color-grey92: #EBEBEB;
+//@color-grey92: #2B2B2B;
+
+/* generic color vars *
+
+
+/* fonts */
+@major-font: 'Abril Fatface', cursive;
+@minor-font: 'PT Sans', sans-serif;
+
+@hard_margin_left: 12%;
+@hard_margin_right: 1.5%;
+
+
+/* DELETE ON INTEGRATION AS BUNDLE.LESS */
+html body {
+	font-size: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+//  overflow-y: hidden;
+}
+
+/* Sections */    
+section {
+  //margin: 5px;
+  //padding: 5px;
+  position: relative;
+  width: calc( 100vw - @hard_margin_right );
+  height: 100vh;
+  box-sizing: content-box;
+//  border: 4px dashed #DD2299;
+  border-radius: 2em;
+  background-color: @color-grey92;
+}
+
+.flex-container {
+    display: flex;
+}
+
+#thin_box {
+    margin-left: @hard_margin_left;
+}
+
+#spacer( @_width:0px, @_height:0px ) {
+    width: @_width;
+    height: @_height;
+}
+
+#headline_type( @type_size ) {
+  font-family: @major-font;
+  font-size: @type_size;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: left;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: .3em;
+  color: @color-lightseagreen;
+}
+
+#paragraph_type( @type_size ) {
+  font-family: @minor-font;
+  font-size: @type_size;
+  font-weight: bold;
+  text-align: left;
+  color: @color-lightsalmon;
+  margin-left: .3em;
+  margin-top: .2em;
+  width: 80%;
+  height: 100px;
+//  border: 4px solid red;
+}
+
+#paragraph_highlight() {
+  color: @color-lightseagreen;
+}

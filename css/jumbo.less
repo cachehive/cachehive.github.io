@@ -1,125 +1,125 @@
-#home_image {
-  width: 100vw;
-  height: 100vh;
+@import 'var.less';
   
-  background-size: cover;
-  background-image: url('../assets/images/web photo 1.jpg');
-  opacity: 10%;
-  width: 97%;
-  height: calc(97% + 25px);
-  position: fixed;
-  top: 0;
-  right: 10px;
-  left: 0;
-  bottom: 0;
-  z-index: -2;
-}
-
-#headline_type(@type_size: 6em) {
-  font-family: 'Cutive Mono', monospace;
-  font-size: @type_size;
-  text-transform: capitalize;
-  text-align: center;
-}
-
-#paragraph_type(@type_size) {
-  font-family: 'Oxygen', monospace;
-  font-size: @type_size;
-  font-style: italics;
-//  text-align: center;
-}
-
-#service(@type_size, @m-left) {
-  font-family: 'Oxygen', monospace;
-  font-size: @type_size;
-  font_style: italics;
-  position: relative;
-  margin-top: 5%;
-  margin-right: 5%;
-  margin-left: @m-left;
-}
-
-/* jumbotron section  ********************************************************/
-/********** Extra small devices only ( iPhone 4 */
-@media (max-width: 767px) {
-    .jumbotron h1 {
-        #headline_type(2em);
-    }
-
-    .jumbotron p {
-        #paragraph_type(.75em);
-    }
-
-    .service0 {
-      #service(.75em, 10%);
-    }
-
-    .service1 {
-      #service(.75em, 10%);
-    }
-}
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    .jumbotron h1 {
-        #headline_type(3em);
-    }
-
-    .jumbotron p {
-        #paragraph_type(1em);
-    }
-
-    .service0 {
-      #service(1em, 10%);
-    }
-
-    .service1 {
-      #service(1em, 10%);
-    }
-}
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-    .jumbotron {
-        // #home_image;
-    }
-
-    .jumbotron h1 {
-        #headline_type(3em);    
-    }
-
-    .jumbotron p {
-        #paragraph_type(2em);
-    }
-
-    .service0 {
-      #service(1em, 10%);
-    }
-
-    .service1 {
-      #service(1em, 35%);
-    }
-}
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    .jumbotron {
-      // #home_image;
-    }
+.jumbotron-main-block {
+    position: relative; 
+    width: 87%;
+    margin-top: 12%;
+  //border: 12px dashed red;
     
-    .jumbotron h1 {
-        #headline_type(5em);
+  //border: 3px dotted orange;   
+}
+
+.jumbotron-secondary-block {
+    position: relative;
+    width: 87%;
+
+  //border: 3px dotted orange;
+}
+
+#head_box {
+    background: @color-lightsalmon;
+    border-radius: 0px 50px 500px 0px;
+    width: 55%;
+    height: 206px;
+    margin-top: 7px;
+}
+
+// ******************************************* //
+    .jumbotron-thin-strip {
+        #spacer( .65%, 20px);
+        #thin_box;
     }
 
-    .jumbotron p {
-        #paragraph_type(3em);
+    .jumbotron-thin-strip.spacer.add-color {
+        #spacer( .65%, 220px);
+        background-color: @color-lightseagreen;
     }
 
-    .service0 {
-      #service(2em, 10%);
+    jumbotron-secondary-block.jumbotron-thin-strip .spacer {
+      #spacer( .65%, 20px);
     }
 
-    .service1 {
-      #service(2em, 35%);
+    .jumbotron-head-block {
+        #head_box;
+    }
+  
+/*****************************************************************************/
+/* Media Quiery Section - Mobile First Method                                */
+/*****************************************************************************/
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+    .jumbotron-container h1 {
+        #headline_type(1rem);
+    }
+
+    .jumbotron-container .jumbotron-text {
+        #paragraph_type(1rem);
+    }
+
+    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
+        #paragraph_highlight;
+    }    
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+    .jumbotron-container h1 {
+        #headline_type(3rem);
+    }
+
+    .jumbotron-container .jumbotron-text {
+        #paragraph_type(2rem);
+    }
+
+    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
+        #paragraph_highlight;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    .jumbotron-container h1 {
+        #headline_type(5rem);
+    }
+
+    .jumbotron-container .jumbotron-text {
+        #paragraph_type(3rem);
+    }
+
+    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
+        #paragraph_highlight;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    
+    .jumbotron-container h1 {
+        #headline_type(7rem);    
+    }
+
+    .jumbotron-container .jumbotron-text {
+        #paragraph_type(3.5rem);
+    }
+
+    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
+        #paragraph_highlight;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    
+    .jumbotron-container h1 {
+        #headline_type(8rem);    
+    }
+
+    .jumbotron-container .jumbotron-text {
+        #paragraph_type(4rem);
+    }
+
+    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
+        #paragraph_highlight;
     }
 }

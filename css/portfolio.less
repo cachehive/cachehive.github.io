@@ -1,64 +1,145 @@
+// @import 'var.less';
+// @import 'jumbo.less';
 
-.portfolio-container {
-	width: 100vw;
-  height: 100vh;
-  border: 3px double #0000FF;
+// ******************************************* //
+
+
+.portfolio-main-block {
+    position: relative; 
+    width: 87%;
+    margin-top: 12%;
+  
+//    border: 3px dotted orange;   
 }
 
-.portfolio-container h2 {
-  text-align: left;
-  text-transform: uppercase;
-  margin-left: 6%;
-  margin-right: 12%;
-  margin-top: 1em;
-  margin-bottom: 1em;
+.portfolio-thin-strip.spacer.add-inverse-color {
+    #thin_box;
+    #spacer( .65%, 320px);
+    background-color: @color-lightsalmon;
+  //  border: 12px dotted green;
 }
 
-.portfolio-flex {
-	display: flex;
-	min-height: 10em;
-    vertical-align: middle
-}
 
-.portfolio-flex .flex-block {
-  margin-left: 5%;
-  margin-right: 4%;
-  border: 3px double #0000FF;
-}
-
-.portfolio-flex .flex-block h3 {
-  text-align: center;
-  margin-left: 7%;
-  margin-right: 7%;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border: 3px solid #FF0
-}
+// ******************************************* //
+// Join Section
+// ******************************************* //
 
 .join-container {
-  border: 3px dotted #442244;
-  display:block;
+ // border: 3px dotted #442244;
+  display: flex;
+  height:50px;
 }
 
-.join-container h2 {
-  position: relative;
+.join-email-input {
+  font-family: @minor-font;
+  //font-size: @type_size;
+  font-size: 2em;
+  font-weight: bold;
   text-align: center;
-  text-transform: capitalize;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  //top: 0;
+  color: #000000;
+  margin-left: .3em;
+  margin-top: .2em;
+  width: 50%;
+  //height: 100px;
+//  border: 4px solid red;
 }
-
 
 .join-button {
-  //position: relative;
-  margin-left: 25%;
+  font-family: @minor-font;
+  font-size: 2em;
+  margin-left: 3px;
   //margin-right: auto;
   text-align: center;
   //margin-bottom: 0;
   //margin: 0 auto;
   //top: 0;
   //width: 7em;
-  width: 50%;
+  width: 25%;
+}
+
+join-button.btn-primary:hover,
+join-button.btn-primary:focus,
+join-button.btn-primary:active,
+join-button.btn-primary.active {
+  color: #000000;
+  background-color: @color-lightsalmon;
+  //border-color: #285e8e;
+}
+
+/*****************************************************************************/
+/* Media Quiery Section - Mobile First Method                                */
+/*****************************************************************************/
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+    
+    .portfolio-container h1 {
+        #headline_type(1em);
+    }
+
+    .portfolio-container .portfolio-text {
+        #paragraph_type(1em);
+        color: #000000 ;
+        margin-left: 1%;
+        margin-top: 3.5%;
+    }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+    .portfolio-container h1 {
+        #headline_type(1.5em);
+    }
+
+    .portfolio-container .portfolio-text {
+        #paragraph_type(1em);
+        color: #000000 ;
+        margin-left: 1%;
+        margin-top: 3.5%;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    
+    .portfolio-container h1 {
+        #headline_type(1em);
+    }
+
+    .portfolio-container .portfolio-text {
+        #paragraph_type(2em);
+        color: #000000 ;
+        margin-left: 1%;
+        margin-top: 3.5%;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    
+    .portfolio-container h1 {
+        #headline_type( 6em );    
+    }
+
+    .portfolio-container .portfolio-text {
+        #paragraph_type( 2.5em );
+        color: #000000 ;
+        margin-left: 1%;
+        margin-top: 3.5%;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    
+    .portfolio-container h1 {
+        #headline_type( 8em );    
+    }
+
+    .portfolio-container .portfolio-text {
+        #paragraph_type( 2.5em );
+        color: #000000 ;
+        margin-left: 1%;
+        margin-top: 3.5%;
+    }
 }
