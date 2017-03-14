@@ -1,19 +1,14 @@
-@import 'var.less';
-  
+
+
 .jumbotron-main-block {
     position: relative; 
     width: 87%;
     margin-top: 12%;
-  //border: 12px dashed red;
-    
-  //border: 3px dotted orange;   
 }
 
 .jumbotron-secondary-block {
     position: relative;
     width: 87%;
-
-  //border: 3px dotted orange;
 }
 
 #head_box {
@@ -24,7 +19,103 @@
     margin-top: 7px;
 }
 
-// ******************************************* //
+/*****************************************************************************/
+/* Media Quiery Section - Mobile First Method                                */
+/*****************************************************************************/
+
+/* Custom, iPhone Retina */ 
+// @media only screen and (min-width : 320px) {
+@media only screen and (max-width : 479px) {
+    .jumbotron-head-block {
+        //#head_box;
+        visible: hidden;
+    }
+
+    .jumbotron-container h1 {
+        #headline_type(1.75em);
+    }
+
+    .jumbotron-container .jumbotron-text {
+        #paragraph_type(1em);
+    }
+
+    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
+        #paragraph_highlight;
+    }
+
+    .jumbotron-thin-strip {
+        //#spacer( .65%, 20px);
+        //#thin_box;
+        visible: hidden;
+    }
+
+    .jumbotron-thin-strip.spacer.add-color {
+        //#spacer( .65%, 220px);
+        //background-color: @color-lightseagreen;
+        visible: hidden;
+    }
+
+    jumbotron-secondary-block.jumbotron-thin-strip .spacer {
+        //#spacer( .65%, 20px);
+        visible: hidden;
+    }    
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+    .jumbotron-head-block {
+        //#head_box;
+        visible: hidden;
+    }
+
+    .jumbotron-container h1 {
+        #headline_type(3em);
+    }
+
+    .jumbotron-container .jumbotron-text {
+        #paragraph_type(2em);
+    }
+
+    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
+        #paragraph_highlight;
+    }
+
+    .jumbotron-thin-strip {
+        //#spacer( .65%, 20px);
+        //#thin_box;
+        visible: hidden;
+    }
+
+    .jumbotron-thin-strip.spacer.add-color {
+        //#spacer( .65%, 220px);
+        //background-color: @color-lightseagreen;
+        visible: hidden;
+    }
+
+    jumbotron-secondary-block.jumbotron-thin-strip .spacer {
+        //#spacer( .65%, 20px);
+        visible: hidden;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    .jumbotron-head-block {
+        #head_box;
+    }
+
+    .jumbotron-container h1 {
+        #headline_type(5em);
+    }
+
+    .jumbotron-container .jumbotron-text {
+        #paragraph_type(2.5em);
+    }
+
+    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
+        #paragraph_highlight;
+    }
+
     .jumbotron-thin-strip {
         #spacer( .65%, 20px);
         #thin_box;
@@ -38,88 +129,71 @@
     jumbotron-secondary-block.jumbotron-thin-strip .spacer {
       #spacer( .65%, 20px);
     }
-
-    .jumbotron-head-block {
-        #head_box;
-    }
-  
-/*****************************************************************************/
-/* Media Quiery Section - Mobile First Method                                */
-/*****************************************************************************/
-
-/* Custom, iPhone Retina */ 
-@media only screen and (min-width : 320px) {
-    .jumbotron-container h1 {
-        #headline_type(1rem);
-    }
-
-    .jumbotron-container .jumbotron-text {
-        #paragraph_type(1rem);
-    }
-
-    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
-        #paragraph_highlight;
-    }    
-}
-
-/* Extra Small Devices, Phones */ 
-@media only screen and (min-width : 480px) {
-    .jumbotron-container h1 {
-        #headline_type(3rem);
-    }
-
-    .jumbotron-container .jumbotron-text {
-        #paragraph_type(2rem);
-    }
-
-    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
-        #paragraph_highlight;
-    }
-}
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-    .jumbotron-container h1 {
-        #headline_type(5rem);
-    }
-
-    .jumbotron-container .jumbotron-text {
-        #paragraph_type(3rem);
-    }
-
-    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
-        #paragraph_highlight;
-    }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
     
+    .jumbotron-head-block {
+        #head_box;
+    }
+
     .jumbotron-container h1 {
         #headline_type(7rem);    
     }
 
     .jumbotron-container .jumbotron-text {
-        #paragraph_type(3.5rem);
+        #paragraph_type(3.5em);
     }
 
     .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
         #paragraph_highlight;
+    }
+    .jumbotron-thin-strip {
+        #spacer( .65%, 20px);
+        #thin_box;
+    }
+
+    .jumbotron-thin-strip.spacer.add-color {
+        #spacer( .65%, 220px);
+        background-color: @color-lightseagreen;
+    }
+
+    jumbotron-secondary-block.jumbotron-thin-strip .spacer {
+      #spacer( .65%, 20px);
     }
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
     
+    .jumbotron-head-block {
+        #head_box;
+    }
+
     .jumbotron-container h1 {
-        #headline_type(8rem);    
+        #headline_type(8em);    
     }
 
     .jumbotron-container .jumbotron-text {
-        #paragraph_type(4rem);
+        #paragraph_type(4em);
     }
 
     .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
         #paragraph_highlight;
+    }
+
+    .jumbotron-thin-strip {
+        #spacer( .65%, 20px);
+        #thin_box;
+    }
+
+    .jumbotron-thin-strip.spacer.add-color {
+        #spacer( .65%, 220px);
+        background-color: @color-lightseagreen;
+    }
+
+    jumbotron-secondary-block.jumbotron-thin-strip .spacer {
+      #spacer( .65%, 20px);
     }
 }

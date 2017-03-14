@@ -1,6 +1,7 @@
 import React from 'react';
 import Join from '../components/join';
 import Footer from '../components/footer';
+//import Community from '../components/community';
 
 export default class Portfolio extends React.Component {
 
