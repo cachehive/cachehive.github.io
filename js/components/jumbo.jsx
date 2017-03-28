@@ -2,23 +2,22 @@ import React from 'react';
 
 export default class Jumbo extends React.Component {
     
+    // <div className="down-arrow" onClick={() => this.scrollTo(1)}>
+                
 
     render () {
 	    return (
 	    	<div className="jumbotron-container container-fluid">
-    	    	<div className="jumbotron-main-block flex-container">
-	                <div className="jumbotron-thin-strip spacer add-color" />
-	                <div className="jumbotron-head-block">
-	                    <h1>Problems<br />Solved.</h1>
-	                </div>
-	            </div>
-	            <div className="jumbotron-secondary-block flex-container">
-	                <div className="jumbotron-thin-strip spacer" />
-	                <div className="jumbtron-message-block">
-	                    <p className="jumbotron-text">We use technology to create elegant <span className="jumbotron-text-highlight">solutions</span> for this accelerated and ever-evolving economy</p>
-	                </div>
-	            </div>
-			</div>	        
+    	    	<h1>Problems Solved.</h1>
+	            <p className="jumbotron-text">Elegant technology solutions for this accelerated economy</p>
+	            <div className="down-arrow">
+                	<span class="fa-stack fa-lg">
+  						<i class="fa fa-circle-thin fa-stack-2x"></i>
+  						<i class="fa fa-chevron-down fa-stack-1x"></i>
+					</span>
+	
+                </div>
+	        </div>	        
 	    );
 	}
 }

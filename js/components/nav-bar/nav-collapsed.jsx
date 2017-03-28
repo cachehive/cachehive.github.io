@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 
 class NavCollapsed extends React.Component {
     render() {

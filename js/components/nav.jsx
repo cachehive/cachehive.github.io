@@ -46,9 +46,9 @@ export default class Nav extends React.Component {
                             <span className="icon-bar"></span>
                         </button>
 
-                        <div className="navbar-brand pull-right ">
+                        <div className="navbar-brand pull-left">
                             <a href="#">
-                                <img src="../assets/images/ch-logo.png" alt="cachehive.com" />
+                                <img src="../assets/images/banner-logo-navy.svg" alt="cachehive.com" />
                             </a>
                         </div>
                     </div>

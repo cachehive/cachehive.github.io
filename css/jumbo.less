@@ -1,9 +1,16 @@
+@import 'var.less';
 
+section.jumbotron {
+    background: url("../assets/images/lightbulb-background.svg") no-repeat center center;
+    margin: 0px;
+    padding: 0px;
+}
 
 .jumbotron-main-block {
     position: relative; 
     width: 87%;
     margin-top: 12%;
+    color: white;
 }
 
 .jumbotron-secondary-block {
@@ -11,12 +18,9 @@
     width: 87%;
 }
 
-#head_box {
-    background: @color-lightsalmon;
-    border-radius: 0px 50px 500px 0px;
-    width: 55%;
-    height: 206px;
-    margin-top: 7px;
+.jumbotron-container {
+    padding: 0px;
+    margin: 0px;
 }
 
 /*****************************************************************************/
@@ -26,174 +30,119 @@
 /* Custom, iPhone Retina */ 
 // @media only screen and (min-width : 320px) {
 @media only screen and (max-width : 479px) {
-    .jumbotron-head-block {
-        //#head_box;
-        visible: hidden;
-    }
+    
+    .jumbotron-container .jumbotron-text {
+        #paragraph_type(1em);
+    } 
 
     .jumbotron-container h1 {
         #headline_type(1.75em);
+        margin-top: 15%;
+        margin-bottom: 0; 
     }
 
     .jumbotron-container .jumbotron-text {
         #paragraph_type(1em);
+        margin-top: 2%;
+        margin-bottom: 0;
     }
 
-    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
-        #paragraph_highlight;
-    }
-
-    .jumbotron-thin-strip {
-        //#spacer( .65%, 20px);
-        //#thin_box;
-        visible: hidden;
-    }
-
-    .jumbotron-thin-strip.spacer.add-color {
-        //#spacer( .65%, 220px);
-        //background-color: @color-lightseagreen;
-        visible: hidden;
-    }
-
-    jumbotron-secondary-block.jumbotron-thin-strip .spacer {
-        //#spacer( .65%, 20px);
-        visible: hidden;
-    }    
+    .jumbotron-container .down-arrow {
+        font-size: 1em;
+        color: white;
+        text-align: center;
+        margin-top: 10%;
+    }   
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : 480px) {
-    .jumbotron-head-block {
-        //#head_box;
-        visible: hidden;
-    }
 
     .jumbotron-container h1 {
         #headline_type(3em);
+        margin-top: 15%;
+        margin-bottom: 0; 
     }
 
     .jumbotron-container .jumbotron-text {
-        #paragraph_type(2em);
+        #paragraph_type(1.5em);
+        margin-top: 2%;
+        margin-bottom: 0;
     }
 
-    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
-        #paragraph_highlight;
-    }
-
-    .jumbotron-thin-strip {
-        //#spacer( .65%, 20px);
-        //#thin_box;
-        visible: hidden;
-    }
-
-    .jumbotron-thin-strip.spacer.add-color {
-        //#spacer( .65%, 220px);
-        //background-color: @color-lightseagreen;
-        visible: hidden;
-    }
-
-    jumbotron-secondary-block.jumbotron-thin-strip .spacer {
-        //#spacer( .65%, 20px);
-        visible: hidden;
+    .jumbotron-container .down-arrow {
+        font-size: 2.5em;
+        color: white;
+        text-align: center;
+        margin-top: 10%;
     }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
-    .jumbotron-head-block {
-        #head_box;
-    }
 
     .jumbotron-container h1 {
         #headline_type(5em);
+        margin-top: 15%;
+        margin-bottom: 0; 
     }
 
     .jumbotron-container .jumbotron-text {
         #paragraph_type(2.5em);
+        margin-top: 2%;
+        margin-bottom: 0;
     }
 
-    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
-        #paragraph_highlight;
-    }
-
-    .jumbotron-thin-strip {
-        #spacer( .65%, 20px);
-        #thin_box;
-    }
-
-    .jumbotron-thin-strip.spacer.add-color {
-        #spacer( .65%, 220px);
-        background-color: @color-lightseagreen;
-    }
-
-    jumbotron-secondary-block.jumbotron-thin-strip .spacer {
-      #spacer( .65%, 20px);
+    .jumbotron-container .down-arrow {
+        font-size: 2.5em;
+        color: white;
+        text-align: center;
+        margin-top: 10%;
     }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
     
-    .jumbotron-head-block {
-        #head_box;
-    }
-
     .jumbotron-container h1 {
-        #headline_type(7rem);    
+        #headline_type(7 em);
+        margin-top: 15%;
+        margin-bottom: 0; 
     }
 
     .jumbotron-container .jumbotron-text {
-        #paragraph_type(3.5em);
+        #paragraph_type(2.5em);
+        margin-top: 2%;
+        margin-bottom: 0;
     }
 
-    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
-        #paragraph_highlight;
-    }
-    .jumbotron-thin-strip {
-        #spacer( .65%, 20px);
-        #thin_box;
-    }
-
-    .jumbotron-thin-strip.spacer.add-color {
-        #spacer( .65%, 220px);
-        background-color: @color-lightseagreen;
-    }
-
-    jumbotron-secondary-block.jumbotron-thin-strip .spacer {
-      #spacer( .65%, 20px);
+    .jumbotron-container .down-arrow {
+        font-size: 2.5em;
+        color: white;
+        text-align: center;
+        margin-top: 10%;
     }
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
     
-    .jumbotron-head-block {
-        #head_box;
-    }
-
     .jumbotron-container h1 {
-        #headline_type(8em);    
+        #headline_type(8 em);
+        margin-top: 15%;
+        margin-bottom: 0; 
     }
 
     .jumbotron-container .jumbotron-text {
-        #paragraph_type(4em);
+        #paragraph_type(2.75em);
+        margin-top: 2%;
+        margin-bottom: 0;
     }
 
-    .jumbotron-container .jumbotron-text .jumbotron-text-highlight {
-        #paragraph_highlight;
-    }
-
-    .jumbotron-thin-strip {
-        #spacer( .65%, 20px);
-        #thin_box;
-    }
-
-    .jumbotron-thin-strip.spacer.add-color {
-        #spacer( .65%, 220px);
-        background-color: @color-lightseagreen;
-    }
-
-    jumbotron-secondary-block.jumbotron-thin-strip .spacer {
-      #spacer( .65%, 20px);
+    .jumbotron-container .down-arrow {
+        font-size: 4em;
+        color: white;
+        text-align: center;
+        margin-top: 10%;
     }
 }

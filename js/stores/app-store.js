@@ -10,11 +10,12 @@ class AppStore extends Store {
         this.logger.debug('Initializing AppStore');
 
         this.initialize('pages', [
-          { name: 'home', title: 'Home', nav: true, auth: false, default: true },
-          { name: 'portfolio', title: 'Portfolio', nav: true, auth: false },
-          { name: 'about', title: 'About', nav: true, auth: false }
+          { name: 'home', title: 'Home', nav: true, auth: false, scrollPos: 0, default: true },
+          { name: 'portfolio', title: 'Portfolio', nav: true, auth: false, scrollPos: 1 },
+          { name: 'about', title: 'About', nav: true, auth: false, scrollPos: 2 }, 
         ]);
-        this.initialize('route', this.getNavigationRoute(window.location.hash.substr(1)));
+        //this.initialize('route', this.getNavigationRoute(window.location.hash.substr(1)));
+        this.initialize('route', 'home');
     }
 
     onAction(actionType, data) {
@@ -39,6 +40,7 @@ class AppStore extends Store {
         let newRoute = find(this.get('pages'), path => { return path.name === route.toLowerCase(); });
         if (!newRoute) {
             newRoute = find(this.get('pages'), path => { return path.default && path.default === true; });
+            console.log("newRoute: " + newRoute );
         }
         return newRoute.name || '';
     }

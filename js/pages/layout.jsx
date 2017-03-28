@@ -1,35 +1,62 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import NavBar from '../components/nav-bar/nav-bar';
-//import NavBar from '../components/nav';
+//import NavBar from '../components/nav-bar/nav-bar';
+import NavBar from '../components/nav';
 import Palette from '../components/palette';
 import Jumbo from '../components/jumbo';
 import Portfolio from './portfolio';
 import About from './about';
+import Join from '../components/join';
+import Footer from '../components/footer';
+
+import appStore from '../stores/app-store';``
+
 
 
 export default class Layout extends React.Component {
 
     constructor() {
         super();
-        this.state = { scrollState: 0 };
-        this.state = { email: 'Enter Email' };
+        this.state = { 
+            scrollState: 0,
+            email: 'Enter Email',
+            route: 'home',
+        };
     }
 
-    componentDidMount () {
+    componentWillMount() {
+        this.appStoreId = appStore.registerView(() => { this.updateState(); });
+        this.updateState();
+    }
+
+    componentWillUnmount() {
+        appStore.deregisterView(this.appStoreId);
+    }
+
+    updateState() {
+        this.setState({
+            route: appStore.get('route'),
+            pages: appStore.get('pages')
+        });
+        //console.log( "updateState called - route: " + route + " pages: " + pages );
+    }
+
+    /*componentDidMount () {
         document.addEventListener('scroll', () => {
             let newScrollState = Math.round(window.scrollY / window.innerHeight);
             this.setState({scrollState: newScrollState});
         });
     }
 
+
     setScrollInterval (e) {
         let siblings = e.currentTarget.parentElement.children;
         let current = Array.from(siblings).indexOf(e.currentTarget);
         this.scrollTo(current);
     }
-
+    */
     scrollTo (current) {
         let scrollHeight = current * window.innerHeight;
         if (current === 3) { 
@@ -64,11 +91,12 @@ export default class Layout extends React.Component {
 
   
     render() {
-        // `<NavBar index={this.state.pages} route={this.state.route}/>
+        //<NavBar scrollPos={this.state.scrollState} index={this.state.pages} route={this.state.route}/> 
+                
                 
                 
         return (
-            <div> 
+            <div>
                 <section className="jumbotron" id="home">
                     <Jumbo />
                 </section> 
@@ -77,6 +105,10 @@ export default class Layout extends React.Component {
                 </section> 
                 <section className="portfolio" id="portfolio">
                     <Portfolio submitEmail={this.submitEmail.bind(this)} email={this.state.email} />
+                </section>
+                <section className="footer" id="footer">
+                    <Join />
+                    <Footer />
                 </section>
             </div>
         );

@@ -6,7 +6,7 @@ import NavToolbar from './nav-toolbar';
 import Actions from '../../actions';
  
 class NavBar extends React.Component {
-
+    
     onClick(route) {
         Actions.navigate(route);
     }
@@ -15,6 +15,11 @@ class NavBar extends React.Component {
 //        const { collapsed } = this.state;
 //        const navClass = collapsed ? "collapse" : "";
 //        <div className={"navbar-collapse " + navClass} id="collapsible-navbar">
+        
+        console.log( 'scrollPos: ' + this.scrollPos );
+        console.log( 'index: ' + this.index );
+        console.log( 'route: ' + this.route );
+
         let handler = event => { return this.onClick('pages', event); };
           
         return (
@@ -26,29 +31,24 @@ class NavBar extends React.Component {
                     <NavCollapsed />
                 </div>
                 <div className="navbar-collapse collapse" id="collapsible-navbar">
-                    <ul className="nav navbar-nav pull-right">
-       
-                        <div className="pull-right">
-                  
-                            <li className="nav-item">
-                                <a onClick={ this.handler }>
-                                    <p>Home</p>
-                                </a >
-                            </li>
-                  
-                            <li className="nav-item">
-                                <a onClick={ this.handler }>
-                                    <p>About</p>
-                                </a>
-                            </li>
+                    <ul className="nav navbar-nav">
+                        <li className="nav-item">
+                            <a onClick={ this.handler }>
+                                <p>Home</p>
+                            </a >
+                        </li>
+              
+                        <li className="nav-item">
+                            <a onClick={ this.handler }>
+                                <p>About</p>
+                            </a>
+                        </li>
 
-                            <li className="nav-item">
-                                <a onClick={ this.handler }>
-                                    <p>Portfolio</p>
-                                </a>
-                            </li>
-
-                        </div>
+                        <li className="nav-item">
+                            <a onClick={ this.handler }>
+                                <p>Portfolio</p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 

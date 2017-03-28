@@ -1,9 +1,122 @@
+#footer_paragraph_type() {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+section.footer {
+    margin: 0;
+    padding: 0; 
+}
+
+.footer-container {
+    height: 35%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: @color-atomic-tangerine;
+    border: 2px solid @color-orange;
+}
+
+.footer-graphic-block {
+    #graphic_block( 1% );
+    height: 75%;    
+}
+
+.footer-graphic-block span {
+    border-radius: 100%;
+    margin: .5em;   
+}
+
+.footer-graphic-block span .fa-envelope-o {
+    background: @color-orange;
+    border-radius: 100%;
+    color: white;
+}
+.footer-graphic-block span .fa-twitter {
+    background: @color-orange;
+    border-radius: 100%;
+    color: white
+}
+
+.footer-graphic-block span .fa-instagram {
+    background: @color-orange;
+    border-radius: 100%;
+    color: white;
+}
+
+.footer-graphic-block span .fa-youtube-play {
+    background: @color-orange;
+    border-radius: 100%;
+    color: white; 
+}
+
+.footer-container .copyright-content {
+	#paragraph_type( .75em );
+    #footer_paragraph_type();
+    height: 25%;
+    width: 100%;
+    background-color: @color-san-juan-navy;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-container .copyright-content p {
+     margin: 0; 
+}
+
+// ******************************************* //
+// Join Section
+// ******************************************* //
+
+.join-container {
+    background: url("../assets/images/shatter-background.svg") no-repeat center center;
+    height: 65%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    //border: 3px solid @color-orange;
+}
+
+.join-container .join-text {
+    #paragraph_type( 2.5em );
+    margin-top: 12%;
+    color: #000000;
+}
+
+.join-container .join-submit {
+    align-items: center; 
+    justify-content: center;
+}
+
+.join-email-input {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+  margin-left: 3px;
+  //margin-top: .2em;
+  width: 40%;
+}
 
 
-.footer-content .copyright-content {
-	//position: relative;
-	margin-top: 40%;
-	margin-bottom: 0px;
-//	border: 3px dotted blue;
-	text-align: center;
+/* join button */
+    .btn-join {
+        background-color: @color-orange;
+        color: #000000 ;
+        border-color: @color-atomic-tangerine;
+        border-radius: 10px;
+        font-family: @minor-font;
+        font-size: 2em;
+        width: 15%;
+    }
+    .btn-join:hover,
+    .btn-join:focus,
+    .btn-join:active {
+        background-color:@color-atomic-tangerine;
+        color: #000000;
+        border-color: @color-orange;
 }

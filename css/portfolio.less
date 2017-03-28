@@ -1,69 +1,69 @@
-// @import 'var.less';
-// @import 'jumbo.less';
+#portfolio_paragraph_type() {
+    display: block;
+    width: 100%;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #FFFFFF ;
+}
 
-// ******************************************* //
+section.portfolio {
+    background-color: @color-san-juan-navy;
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+}
 
+#portfolio_graphic_block( @top_mar ) {
+    padding: 0;
+    margin-top: @top_mar;
+    //display: -webkit-box;
+    //display: -moz-box;
+    //display: -ms-flexbox;
+    //display: -webkit-flex;
+    //display: flex;
+    position: relative;
+}
 
-.portfolio-main-block {
+.portfolio-image-container {
+    #portfolio_graphic_block( 5% );
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.portfolio-headline {
+    height: 100%;
+    width: 100%;
+}
+
+.portfolio-headline h1 {
+    color: #FFFFFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;  
+    transform: translate(-52%, -20%);
+}
+
+.portfolio-image {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.portfolio-message-block {
+    #paragraph_type( 2em );
     position: relative; 
+    display: inline-blpock;
     width: 87%;
-    margin-top: 12%;
-  
-//    border: 3px dotted orange;   
+    //margin-top: 12%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.portfolio-thin-strip.spacer.add-inverse-color {
-    #thin_box;
-    #spacer( .65%, 320px);
-    background-color: @color-lightsalmon;
-  //  border: 12px dotted green;
-}
-
-
-// ******************************************* //
-// Join Section
-// ******************************************* //
-
-.join-container {
- // border: 3px dotted #442244;
-  display: flex;
-  height:50px;
-}
-
-.join-email-input {
-  font-family: @minor-font;
-  //font-size: @type_size;
-  font-size: 2em;
-  font-weight: bold;
-  text-align: center;
-  color: #000000;
-  margin-left: .3em;
-  margin-top: .2em;
-  width: 50%;
-  //height: 100px;
-//  border: 4px solid red;
-}
-
-.join-button {
-  font-family: @minor-font;
-  font-size: 2em;
-  margin-left: 3px;
-  //margin-right: auto;
-  text-align: center;
-  //margin-bottom: 0;
-  //margin: 0 auto;
-  //top: 0;
-  //width: 7em;
-  width: 25%;
-}
-
-join-button.btn-primary:hover,
-join-button.btn-primary:focus,
-join-button.btn-primary:active,
-join-button.btn-primary.active {
-  color: #000000;
-  background-color: @color-lightsalmon;
-  //border-color: #285e8e;
+.about-message-block {
+    display: block;
 }
 
 /*****************************************************************************/
@@ -79,23 +79,20 @@ join-button.btn-primary.active {
 
     .portfolio-container .portfolio-text {
         #paragraph_type(1em);
-        color: #000000 ;
-        margin-left: 1%;
-        margin-top: 3.5%;
+        #portfolio_paragraph_type();
     }
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : 480px) {
+    
     .portfolio-container h1 {
         #headline_type(1.5em);
     }
 
     .portfolio-container .portfolio-text {
         #paragraph_type(1em);
-        color: #000000 ;
-        margin-left: 1%;
-        margin-top: 3.5%;
+        #portfolio_paragraph_type();
     }
 }
 
@@ -107,10 +104,8 @@ join-button.btn-primary.active {
     }
 
     .portfolio-container .portfolio-text {
-        #paragraph_type(2em);
-        color: #000000 ;
-        margin-left: 1%;
-        margin-top: 3.5%;
+        #paragraph_type(1.5em);
+        #portfolio_paragraph_type();
     }
 }
 
@@ -122,10 +117,8 @@ join-button.btn-primary.active {
     }
 
     .portfolio-container .portfolio-text {
-        #paragraph_type( 2.5em );
-        color: #000000 ;
-        margin-left: 1%;
-        margin-top: 3.5%;
+        #paragraph_type( 1.25em );
+        #portfolio_paragraph_type();
     }
 }
 
@@ -133,13 +126,11 @@ join-button.btn-primary.active {
 @media only screen and (min-width : 1200px) {
     
     .portfolio-container h1 {
-        #headline_type( 8em );    
+        #headline_type( 8em );
     }
 
     .portfolio-container .portfolio-text {
-        #paragraph_type( 2.5em );
-        color: #000000 ;
-        margin-left: 1%;
-        margin-top: 3.5%;
+        #paragraph_type( 1.5em );
+        #portfolio_paragraph_type();
     }
 }

@@ -10,9 +10,14 @@ export default class Join extends React.Component {
 
     render () {
 	    return (
-    		<div className="join-container flex-container">
-	            <input type="email" onChange={this.handleEmailEntry.bind(this)} value={this.props.email} name="EMAIL" className="join-email-input" />
-	            <input type="submit" value="Join" name="submit" className="button btn-primary join-button" />
+    		<div className="join-container container-fluid">
+	            <div className="join-text">
+					<p>Get the details before the rest of the world by joining our email list.</p>
+				</div>
+				<div className="join-submit flex-container">
+					<input type="email" onChange={this.handleEmailEntry.bind(this)} value={this.props.email} name="EMAIL" className="join-email-input" />
+	            	<input type="submit" value="Join" name="submit" className="btn btn-join" />
+	            </div>
             </div>
 		);
 	}

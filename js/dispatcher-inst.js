@@ -1,8 +1,8 @@
-import Dispatcher from './dispatcher-inst';
- 
-export default class Actions {
-    
-    static navigate(newRoute) {
-        Dispatcher.dispatch('NAVIGATE', { location: newRoute });
-    }
-}
+import Dispatcher from './lib/dispatcher';
+
+var dispatcher = new Dispatcher({
+    debug: true,
+    logLevel: 'ALL'
+});
+
+export default dispatcher;

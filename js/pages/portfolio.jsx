@@ -1,32 +1,25 @@
 import React from 'react';
-import Join from '../components/join';
-import Footer from '../components/footer';
-//import Community from '../components/community';
 
 export default class Portfolio extends React.Component {
+
 
 	render() {
     
         return (
         	<div className="portfolio-container container-fluid">
-               	<div className="portfolio-main-block flex-container">
-					<div className="portfolio-thin-strip spacer add-inverse-color" />
-                    <div classname="portfolio-content-container">
-                    	<div className="portfolio-head-block">
-                        	<h1>portfolio</h1>
-                        </div>
-                        <div className="portfolio-message-block">
-	                    	<p className="portfolio-text">
-	           					We are currently hard at work on several projects and we look forward to sharing them with you soon.
-							</p>
-							<p className="portfolio-text">
-								Get the details before the rest of the world by joining our email list.
-							</p>
-						</div>
-						<Join submitEmail={this.props.submitEmail} email={this.props.email} />
-                    </div>
+
+           		<div className="portfolio-image-container">
+                	<div className="portfolio-headline">
+                		<h1>our portfolio</h1>
+                	</div>
+                	<img src="../assets/images/desk-vector.svg" alt="portfolio" className="portfolio-image img-responsive" />
+           		</div>
+				
+                <div className="portfolio-message-block">
+                	<p className="portfolio-text">
+       					We are currently hard at work on several projects and we look forward to sharing them with you soon.
+					</p>
 				</div>
-				<Footer />
 			</div>
         );
     }
@@ -35,6 +28,12 @@ export default class Portfolio extends React.Component {
 
 
 /*
+
+				<Join submitEmail={this.props.submitEmail} email={this.props.email} />
+                <Footer />
+
+
+
 			  			
                         <div className="portfolio-message-block">
 	                    	<p className="portfolio-text">

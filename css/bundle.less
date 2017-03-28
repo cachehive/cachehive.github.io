@@ -4,14 +4,12 @@ Theme URI:
 Description:
 Version: 1.0
 Author: tjs
-Author URI:
 License: MIT;
 */
 
 /* Add a clear css file import here. */
 //@implort 'clear.less';
 @import 'var.less';
-
 
 /* Layout */
 html body {
@@ -21,26 +19,55 @@ html body {
 //  overflow-y: hidden;
 }
 
-/* Sections */    
 section {
-  //margin: 5px;
-  //padding: 5px;
   position: relative;
-  width: 98%;
-  width: 100vw;
+  //width: 98%;
+  width: 99vw;
   height: 100vh;
   box-sizing: content-box;
-//  border: 4px dashed #DD2299;
+  width: calc( 100vw - @hard_margin_right );
+  border-radius: 2em;
+  margin: 0;
 }
 
-// fonts
-// font-family: 'Abril Fatface', cursive;
-// font-family: 'PT Sans', sans-serif;
+.flex-container {
+	display: flex;
+}
 
-//@import 'pallette.less';
+#graphic_block( @top_mar ) {
+    padding: 0;
+    margin-top: @top_mar;
+ /* 
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+*/
+    align-items: center; 
+    justify-content: center;
+}
+
+#headline_type( @type_size ) {
+  font-family: @minor-font;
+  font-size: @type_size;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #FFFFFF;
+}
+
+#paragraph_type( @type_size ) {
+  font-family: @minor-font;
+  font-size: @type_size;
+  text-align: center;
+  color: #FFFFFF;
+}
+
 @import 'jumbo.less';
 @import 'navbar.less';
 @import 'about.less';
 @import 'portfolio.less';
 @import 'footer.less';
-//@import 'community.less';
