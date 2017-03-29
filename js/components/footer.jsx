@@ -16,7 +16,6 @@ class Footer extends React.Component {
                         <span class="fa-stack fa-4x">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-envelope-o fa-inverse fa-stack-1x"></i>
-                            <i class="fa fa-circle-thin fa-inverse fa-stack-2x"></i>
                         </span>
                         <p>Email Us</p>
                     </div>
@@ -24,7 +23,6 @@ class Footer extends React.Component {
                         <span class="fa-stack fa-4x">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-twitter fa-inverse fa-stack-1x"></i>
-                            <i class="fa fa-circle-thin fa-inverse fa-stack-2x"></i>
                         </span>
                         <p>Twitter</p>
                     </div>
@@ -32,7 +30,6 @@ class Footer extends React.Component {
                         <span class="fa-stack fa-4x">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-instagram fa-inverse fa-stack-1x"></i>
-                            <i class="fa fa-circle-thin fa-inverse fa-stack-2x"></i>
                         </span>
                         <p>Instagram</p>
                     </div>
@@ -40,7 +37,6 @@ class Footer extends React.Component {
                         <span class="fa-stack fa-4x">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-youtube-play fa-inverse fa-stack-1x"></i>
-                            <i class="fa fa-circle-thin fa-inverse fa-stack-2x"></i>
                         </span>
                         <p>YouTube</p>
                     </div>
