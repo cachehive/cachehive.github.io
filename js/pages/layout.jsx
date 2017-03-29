@@ -97,20 +97,6 @@ export default class Layout extends React.Component {
                 
         return (
             <div>
-                <section className="about" id="about">
-                    <About />
-                </section> 
-                <section className="footer" id="footer">
-                    <Join />
-                    <Footer />
-                </section>
-            </div>
-        );
-    }
-}
-
-
-/*
                 <section className="jumbotron" id="home">
                     <Jumbo />
                 </section> 
@@ -124,4 +110,7 @@ export default class Layout extends React.Component {
                     <Join />
                     <Footer />
                 </section>
-                */
+            </div>
+        );
+    }
+}
