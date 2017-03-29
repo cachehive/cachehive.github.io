@@ -13,6 +13,7 @@ section.footer {
 }
 
 .footer-container {
+    //position: relative;
     height: 35%;
     width: 100%;
     margin: 0;
@@ -22,13 +23,32 @@ section.footer {
 }
 
 .footer-graphic-block {
-    #graphic_block( 1% );
-    height: 75%;    
+    #graphic_block( 3em );
+    position: absolute;
+    //top: 0;
+    height: 75%;
+    //width: 100%;
+    //margin: 0 auto;
+    //margin-left: auto;
+    //margin-right: auto;
+    //border: 2px solid black;    
 }
 
 .footer-graphic-block span {
     border-radius: 100%;
-    margin: .5em;   
+    margin-left: .4em;
+    margin-right: .4em;
+    margin-top: 0;
+}
+
+.footer-graphic-block span p {
+    #paragraph_type( .375em );
+    color: #FFFFFF;
+    display: inline-block;
+    width: 100%;
+    margin-top: 4em;
+    margin-left: auto;
+    margin-right: auto;  
 }
 
 .footer-graphic-block span .fa-envelope-o {
@@ -60,8 +80,10 @@ section.footer {
     height: 25%;
     width: 100%;
     background-color: @color-san-juan-navy;
-    margin: 0;
-    padding: 0;
+    position: absolute;
+    bottom: 0;
+    //margin: 5em;
+    //padding: 0;
 }
 
 .footer-container .copyright-content p {

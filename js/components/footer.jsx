@@ -12,25 +12,29 @@ class Footer extends React.Component {
         return (
             <div className="footer-container">
                 <div className="footer-graphic-block flex-container">
-                        <span class="fa-stack fa-5x">
+                        <span class="fa-stack fa-3x">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-envelope-o fa-inverse fa-stack-1x"></i>
                             <i class="fa fa-circle-thin fa-inverse fa-stack-2x"></i>
+                            <p>Email Us</p>
                           </span>
-                        <span class="fa-stack fa-5x">
+                        <span class="fa-stack fa-3x">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-twitter fa-inverse fa-stack-1x"></i>
                             <i class="fa fa-circle-thin fa-inverse fa-stack-2x"></i>
+                            <p>Twitter</p>
                         </span>
-                        <span class="fa-stack fa-5x">
+                        <span class="fa-stack fa-3x">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-instagram fa-inverse fa-stack-1x"></i>
                             <i class="fa fa-circle-thin fa-inverse fa-stack-2x"></i>
+                            <p>Instagram</p>
                         </span>
-                        <span class="fa-stack fa-5x">
+                        <span class="fa-stack fa-3x">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-youtube-play fa-inverse fa-stack-1x"></i>
                             <i class="fa fa-circle-thin fa-inverse fa-stack-2x"></i>
+                            <p>YouTube</p>
                         </span>
                 
                 </div>

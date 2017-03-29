@@ -10,7 +10,7 @@ export default class Join extends React.Component {
 
     render () {
 	    return (
-    		<div className="join-container container-fluid">
+    		<div className="join-container">
 	            <div className="join-text">
 					<p>Get the details before the rest of the world by joining our email list.</p>
 				</div>

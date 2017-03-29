@@ -5,11 +5,17 @@ export default class About extends React.Component {
 	
 	render() {
 		return ( 
-			<div className="about-container container-fluid">
+			<div className="about-container">
 			   	<div className="about-graphic-block flex-container" >
-			   		<div className="graphic-0" />
-			   		<div className="graphic-1" />
-			   		<div className="graphic-2" />
+			   		<div className="graphic">
+			   			<img src="../assets/images/target.svg" alt="target icon" />
+			   		</div>
+			   		<div className="graphic">
+			   			<img src="../assets/images/box.svg" alt="package icon" />
+			   		</div>
+			   		<div className="graphic">
+			   			<img src="../assets/images/brackets.svg" alt="code icon" />
+			   		</div>
 			   	</div>
 				<div className="about-head-block">
                 	<h1>about us</h1>
