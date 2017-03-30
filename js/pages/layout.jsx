@@ -98,7 +98,7 @@ export default class Layout extends React.Component {
         return (
             <div>
                 <section className="jumbotron" id="home">
-                    <Jumbo />
+                    <Jumbo scrollTo={this.scrollTo.bind(this)} />
                 </section> 
                 <section className="about" id="about">
                     <About />
