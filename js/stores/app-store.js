@@ -9,11 +9,12 @@ class AppStore extends Store {
         super('AppStore');
         this.logger.debug('Initializing AppStore');
 
-        this.initialize('pages', [
-          { name: 'home', title: 'Home', nav: true, auth: false, scrollPos: 0, default: true },
-          { name: 'portfolio', title: 'Portfolio', nav: true, auth: false, scrollPos: 1 },
-          { name: 'about', title: 'About', nav: true, auth: false, scrollPos: 2 }, 
+        this.initialize('contact', [
+          { firstName: 'First' },
+          { lastName: 'Last' },
+          { email: 'Email' }, 
         ]);
+
         //this.initialize('route', this.getNavigationRoute(window.location.hash.substr(1)));
         this.initialize('route', 'home');
     }

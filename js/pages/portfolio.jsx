@@ -8,7 +8,7 @@ export default class Portfolio extends React.Component {
         return (
         	<div className="portfolio-container container-fluid">
 
-           		<div className="portfolio-image-container">
+           		<div className="portfolio-image-block">
                 	<div className="portfolio-headline">
                 		<h1>our portfolio</h1>
                 	</div>

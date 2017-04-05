@@ -11,7 +11,7 @@ import About from './about';
 import Join from '../components/join';
 import Footer from '../components/footer';
 
-import appStore from '../stores/app-store';``
+import AppStore from '../stores/app-store';``
 
 
 
@@ -22,25 +22,27 @@ export default class Layout extends React.Component {
         this.state = { 
             scrollState: 0,
             email: 'Enter Email',
+            firstname: 'firstName',
+            lastname: 'lastName',
             route: 'home',
         };
     }
 
     componentWillMount() {
-        this.appStoreId = appStore.registerView(() => { this.updateState(); });
+        this.appStoreId = AppStore.registerView(() => { this.updateState(); });
         this.updateState();
     }
 
     componentWillUnmount() {
-        appStore.deregisterView(this.appStoreId);
+        AppStore.deregisterView(this.appStoreId);
     }
 
     updateState() {
         this.setState({
-            route: appStore.get('route'),
-            pages: appStore.get('pages')
+            route: AppStore.get('route'),
+            //pages: AppStore.get('pages'),
+            contact: AppStore.get('contact')
         });
-        //console.log( "updateState called - route: " + route + " pages: " + pages );
     }
 
     /*componentDidMount () {
@@ -80,19 +82,17 @@ export default class Layout extends React.Component {
         }, 1);
     }
 
-
     handleSetActive(to) {
         console.log(to);
     }
 
-    submitEmail( email ) {
-        this.setState({ email });
+    submitEmail( entry ) {
+        this.setState({ entry });
+        console.log('Layout page submitEmail: ' + entry ) ;
     }
 
-  
     render() {
         //<NavBar scrollPos={this.state.scrollState} index={this.state.pages} route={this.state.route}/> 
-                
                 
                 
         return (
@@ -104,10 +104,10 @@ export default class Layout extends React.Component {
                     <About />
                 </section> 
                 <section className="portfolio" id="portfolio">
-                    <Portfolio submitEmail={this.submitEmail.bind(this)} email={this.state.email} />
+                    <Portfolio />
                 </section>
                 <section className="footer" id="footer">
-                    <Join />
+                    <Join submitEmail={this.submitEmail.bind(this)} email={this.state.email} />
                     <Footer />
                 </section>
             </div>

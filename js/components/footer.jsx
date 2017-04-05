@@ -12,7 +12,6 @@ class Footer extends React.Component {
         return (
             <div className="footer-container">
                 <div className="footer-graphic-block flex-container">
-                    
                     <a href="mailto:info@cachehive.com" target="_blank">
                         <div className="contact-type" >
                             <span class="fa-stack fa-4x">

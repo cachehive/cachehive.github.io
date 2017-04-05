@@ -1,30 +1,64 @@
 import React from 'react';
+import Actions from '../actions';
+import AppStore from '../stores/app-store';
 
 export default class Join extends React.Component {
     
-    handleEmailEntry(e) {
-    	const entry = e.target.value;
-    	this.props.submitEmail( entry ); 
+    /*componentWillMount() {
+        this.appStoreId = AppStore.registerView(() => { this.updateState(); });
+        this.updateState();
     }
-
-
+ 
+    componentWillUnmount() {
+    	AppStore.deregisterView(this.appStoreId);
+    }
+         
+	updateState() {
+        this.setState({
+            email: AppStore.get('email'),
+        });
+    }
+ */
+    onSubmit() {
+        alert(`Submitted email address: ${this.state.email}`);
+    }
+ 
+    onChange() {
+        this.setState({
+            email: React.findDOMNode(this.refs.em).value,
+        });
+    }
     render () {
+	    let submitHandler = event => { return this.onSubmit(event); };
+        let changeHandler = event => { return this.onChange(event); };
+        
 	    return (
     		<div className="join-container">
 	            <div className="join-text">
 					<p>Get the details before the rest of the world by joining our email list.</p>
-				</div>
-				<div className="join-submit flex-container">
-					<input type="email" onChange={this.handleEmailEntry.bind(this)} value={this.props.email} name="EMAIL" className="join-email-input" />
-	            	<input type="submit" value="Join" name="submit" className="btn btn-join" />
-	            </div>
-            </div>
+					<div className="join-form flex-container">
+						<input type="email" className="join-email" placeholder={this.props.email} name="EMAIL" />
+		            	<input type="submit"className="btn btn-join" value="Join" name="submit" />
+		          </div>
+		        </div>
+	        </div>
 		);
 	}
+
+					
 };
 
+//   ${this.props.email}
+
+
+//<input className="form-control" onChange={changeHandler} placeholder="Last Name" type="text" value={this.state.lastname} ref="ln"/>
+//<input type="email" onChange={this.handleEmailEntry.bind(this)} placeholder={this.props.email} name="EMAIL" className="join-email-input" />
+//<input type="submit" onClick={this.handleEmailSubmit.bind(this)} value="Join" name="submit" className="btn btn-join" />
+
+
+
 /*
-<form action="//cachehive.us15.list-manage.com/subscribe/post?u=6ffde59ec6305ed2496e15c84&amp;id=c877def6a3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="subscribe-form" novalidate="novalidate" target="_blank">
+				<form action="//cachehive.us15.list-manage.com/subscribe/post?u=6ffde59ec6305ed2496e15c84&amp;id=c877def6a3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="subscribe-form" novalidate="novalidate" target="_blank">
 	                <h2 className="join-title">Get the scoop!</h2>
 	                <div className="form-group">
 	                    <label for="mce-EMAIL" className="sr-only"></label>
