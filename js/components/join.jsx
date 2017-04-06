@@ -31,7 +31,7 @@ export default class Join extends React.Component {
     render () {
 	    let submitHandler = event => { return this.onSubmit(event); };
         let changeHandler = event => { return this.onChange(event); };
-        
+  ``      
 	    return (
     		<div className="join-container">
 	            <div className="join-text">

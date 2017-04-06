@@ -12,13 +12,11 @@ export default class Portfolio extends React.Component {
                 	<div className="portfolio-headline">
                 		<h1>our portfolio</h1>
                 	</div>
-                	<img src="../assets/images/desk-vector.svg" alt="portfolio" className="portfolio-image img-responsive" />
+                	<img className="portfolio-image img-responsive" src="../assets/images/desk-vector.svg" alt="portfolio" />
            		</div>
 				
                 <div className="portfolio-message-block">
-                	<p className="portfolio-text">
-       					We are currently hard at work on several projects and we look forward to sharing them with you soon.
-					</p>
+                	<p>We are currently hard at work on several projects and we look forward to sharing them with you soon.</p>
 				</div>
 			</div>
         );
