@@ -6,17 +6,19 @@ export default class Portfolio extends React.Component {
 	render() {
     
         return (
-        	<div className="portfolio-container container-fluid">
-
+        	<div className="portfolio-container XXXcontainer-fluid">
+        		<div className="upper">
            		<div className="portfolio-image-block">
                 	<div className="portfolio-headline">
                 		<h1>our portfolio</h1>
                 	</div>
                 	<img className="portfolio-image img-responsive" src="../assets/images/desk-vector.svg" alt="portfolio" />
            		</div>
-				
+				</div>
+				<div className="lower">
                 <div className="portfolio-message-block">
                 	<p>We are currently hard at work on several projects and we look forward to sharing them with you soon.</p>
+				</div>
 				</div>
 			</div>
         );

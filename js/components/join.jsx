@@ -1,8 +1,15 @@
 import React from 'react';
+import ReactDOM from 'react-dom'
 import Actions from '../actions';
 import AppStore from '../stores/app-store';
+import axios from 'axios';
 
 export default class Join extends React.Component {
+    constructor(props) {
+	    super(props);
+	    this.state = {email: 'enter email'};
+
+ 	}
     
     /*componentWillMount() {
         this.appStoreId = AppStore.registerView(() => { this.updateState(); });
@@ -19,36 +26,96 @@ export default class Join extends React.Component {
         });
     }
  */
+
+	sendToMailChimp() {
+		let mailchimpInstance   = 'us15',
+    		listUniqueId        = 'c877def6a3',
+    		mailchimpApiKey     = '639301b95bd4a7ce5ab48a341298e801-us15';
+
+    	axios.post('https://' + mailchimpInstance + '.api.mailchimp.com/3.0/lists/' + listUniqueId + '/members/', {
+        	auth: 'api_key: ' + mailchimpApiKey,
+      		header: 'content-type: application/json',
+      		mode: 'no-cors',	
+      		data: {
+		    	"email_address": this.state.email,
+		        "status": "subscribed"
+		    }
+		})
+		.then(function (response) {
+		      console.log(response);
+		})
+		.catch(function (error) {
+		      console.log(error);
+		});
+	}
+
+	sendToMailChimp2() {
+		let authenticationString = btoa('api_key: 639301b95bd4a7ce5ab48a341298e801-us15');
+    	authenticationString = "Basic " + authenticationString;
+
+    	let listUniqueId        = 'c877def6a3';
+
+    	fetch('https://us15.api.mailchimp.com/3.0/lists/' + listUniqueId + '/members', {
+	      mode: 'no-cors',
+	      method: 'POST',
+	      headers: {
+	        'authorization': authenticationString,
+	        'Accept': 'application/json',
+	        'Content-Type': 'application/json'
+	      },
+	      body: JSON.stringify({
+	        email_address: "cachehive@gmail.com", 
+	        status: "subscribed",
+	      })
+	    }).then(function(e){
+	        console.log("fetch finished: " + e )
+	    }).catch(function(e){
+	        console.log("fetch error: " + e );
+	    })
+	}
+
     onSubmit() {
+        this.sendToMailChimp();
         alert(`Submitted email address: ${this.state.email}`);
+
+        this.setState({
+            email: '',
+        });
+
+        ReactDOM.findDOMNode(this.refs.em).value = '';
+        
+        event.preventDefault();
     }
  
     onChange() {
         this.setState({
-            email: React.findDOMNode(this.refs.em).value,
+            email: ReactDOM.findDOMNode(this.refs.em).value,
         });
     }
+
     render () {
-	    let submitHandler = event => { return this.onSubmit(event); };
+	    
+	   	let submitHandler = event => { return this.onSubmit(event); };
         let changeHandler = event => { return this.onChange(event); };
-  ``      
+    
 	    return (
     		<div className="join-container">
 	            <div className="join-text">
 					<p>Get the details before the rest of the world by joining our email list.</p>
-					<div className="join-form flex-container">
-						<input type="email" className="join-email" placeholder={this.props.email} name="EMAIL" />
-		            	<input type="submit"className="btn btn-join" value="Join" name="submit" />
-		          </div>
+					<form className="join-form flex-container" onSubmit={submitHandler}>
+						<input type="email" className="join-email" placeholder={this.props.email} 
+							  onChange={changeHandler} name="EMAIL" ref="em" />
+		            	<input type="submit" className="btn btn-join" value="Join" name="submit" />
+		          	</form>
+   {this.state.email}
 		        </div>
 	        </div>
 		);
 	}
-
-					
 };
 
-//   ${this.props.email}
+					//<form className="join-form flex-container"  >
+					//onChange={this.changeHandler} 
 
 
 //<input className="form-control" onChange={changeHandler} placeholder="Last Name" type="text" value={this.state.lastname} ref="ln"/>
