@@ -28,9 +28,9 @@ export default class Join extends React.Component {
  */
 
 	sendToMailChimp() {
-		let mailchimpInstance   = 'us15',
-    		listUniqueId        = 'c877def6a3',
-    		mailchimpApiKey     = '639301b95bd4a7ce5ab48a341298e801-us15';
+		let mailchimpInstance   = process.env.MY_DATA_CENTER,
+    		listUniqueId        = process.env.MY_LIST_ID,
+    		mailchimpApiKey     = process.env.MY_API_KEY
 
     	axios.post('https://' + mailchimpInstance + '.api.mailchimp.com/3.0/lists/' + listUniqueId + '/members/', {
         	auth: 'api_key: ' + mailchimpApiKey,
@@ -50,10 +50,10 @@ export default class Join extends React.Component {
 	}
 
 	sendToMailChimp2() {
-		let authenticationString = btoa('api_key: 639301b95bd4a7ce5ab48a341298e801-us15');
+		let authenticationString = btoa('api_key: process.env.MY_API_KEY');
     	authenticationString = "Basic " + authenticationString;
 
-    	let listUniqueId        = 'c877def6a3';
+    	let listUniqueId        = process.env.MY_LIST_ID;
 
     	fetch('https://us15.api.mailchimp.com/3.0/lists/' + listUniqueId + '/members', {
 	      mode: 'no-cors',
@@ -64,7 +64,7 @@ export default class Join extends React.Component {
 	        'Content-Type': 'application/json'
 	      },
 	      body: JSON.stringify({
-	        email_address: "cachehive@gmail.com", 
+	        email_address: this.state.email, 
 	        status: "subscribed",
 	      })
 	    }).then(function(e){
@@ -107,8 +107,7 @@ export default class Join extends React.Component {
 							  onChange={changeHandler} name="EMAIL" ref="em" />
 		            	<input type="submit" className="btn btn-join" value="Join" name="submit" />
 		          	</form>
-   {this.state.email}
-		        </div>
+  	        	</div>
 	        </div>
 		);
 	}
