@@ -3,3 +3,4 @@
 **/*.css
 **/\!bundle!.css
 **/Thumbs.db
+**/.idea
