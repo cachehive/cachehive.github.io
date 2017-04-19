@@ -2,6 +2,7 @@ import Actions from '../actions';
 import Store from '../lib/store';
 import find from 'lodash/find';
 import Dispatcher from '../dispatcher-inst';
+import mc from './send_to_mailchimp.js';
 
 class AppStore extends Store {
 
@@ -9,14 +10,16 @@ class AppStore extends Store {
         super('AppStore');
         this.logger.debug('Initializing AppStore');
 
-        this.initialize('contact', [
+        this.initialize( 'contact', [
           { firstName: 'First' },
           { lastName: 'Last' },
-          { email: 'Email' }, 
+          { email: 'Email' }
         ]);
 
         //this.initialize('route', this.getNavigationRoute(window.location.hash.substr(1)));
         this.initialize('route', 'home');
+        this.initialize('placeholder', 'Enter Email');
+        this.initialize( 'email', '' );
     }
 
     onAction(actionType, data) {
@@ -29,6 +32,11 @@ class AppStore extends Store {
                     this.set('route', newRoute);
                     window.location.hash = `#${newRoute}`;
                 }
+                break;
+
+            case 'SUBMIT_EMAIL':
+                //alert( data.email + ' address submitted!');
+                mc.sendToMailChimp2( data.email );
                 break;
 
             default:

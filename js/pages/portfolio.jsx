@@ -12,7 +12,7 @@ export default class Portfolio extends React.Component {
                 	<div className="portfolio-headline">
                 		<h1>our portfolio</h1>
                 	</div>
-                	<img className="portfolio-image img-responsive" src="../assets/images/desk-vector.svg" alt="portfolio" />
+                	<img className="portfolio-image img-responsive" src="../public/assets/images/desk-vector.svg" alt="portfolio" />
            		</div>
 				</div>
 				<div className="lower">

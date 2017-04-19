@@ -2,16 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import Actions from '../actions';
 import AppStore from '../stores/app-store';
-import axios from 'axios';
 
 export default class Join extends React.Component {
     constructor(props) {
 	    super(props);
-	    this.state = {email: 'enter email'};
+	    this.state = {placeholder: 'Enter Email'};
 
  	}
     
-    /*componentWillMount() {
+    componentWillMount() {
         this.appStoreId = AppStore.registerView(() => { this.updateState(); });
         this.updateState();
     }
@@ -23,71 +22,23 @@ export default class Join extends React.Component {
 	updateState() {
         this.setState({
             email: AppStore.get('email'),
+			placeholder: AppStore.get('placeholder')
         });
     }
- */
 
-	sendToMailChimp() {
-		let mailchimpInstance   = process.env.MY_DATA_CENTER,
-    		listUniqueId        = process.env.MY_LIST_ID,
-    		mailchimpApiKey     = process.env.MY_API_KEY
+    onSubmit(event) {
 
-    	axios.post('https://' + mailchimpInstance + '.api.mailchimp.com/3.0/lists/' + listUniqueId + '/members/', {
-        	auth: 'api_key: ' + mailchimpApiKey,
-      		header: 'content-type: application/json',
-      		mode: 'no-cors',	
-      		data: {
-		    	"email_address": this.state.email,
-		        "status": "subscribed"
-		    }
-		})
-		.then(function (response) {
-		      console.log(response);
-		})
-		.catch(function (error) {
-		      console.log(error);
-		});
-	}
+    	//alert(`Submitted email address: ${this.state.email}`);
 
-	sendToMailChimp2() {
-		let authenticationString = btoa('api_key: process.env.MY_API_KEY');
-    	authenticationString = "Basic " + authenticationString;
+		Actions.submitEmail( this.state.email );
 
-    	let listUniqueId        = process.env.MY_LIST_ID;
+		this.setState({ email: '' });
 
-    	fetch('https://us15.api.mailchimp.com/3.0/lists/' + listUniqueId + '/members', {
-	      mode: 'no-cors',
-	      method: 'POST',
-	      headers: {
-	        'authorization': authenticationString,
-	        'Accept': 'application/json',
-	        'Content-Type': 'application/json'
-	      },
-	      body: JSON.stringify({
-	        email_address: this.state.email, 
-	        status: "subscribed",
-	      })
-	    }).then(function(e){
-	        console.log("fetch finished: " + e )
-	    }).catch(function(e){
-	        console.log("fetch error: " + e );
-	    })
-	}
-
-    onSubmit() {
-        this.sendToMailChimp();
-        alert(`Submitted email address: ${this.state.email}`);
-
-        this.setState({
-            email: '',
-        });
-
-        ReactDOM.findDOMNode(this.refs.em).value = '';
-        
+        //ReactDOM.findDOMNode(this.refs.em).value = '';
         event.preventDefault();
     }
  
-    onChange() {
+    onChange(event) {
         this.setState({
             email: ReactDOM.findDOMNode(this.refs.em).value,
         });
@@ -103,11 +54,11 @@ export default class Join extends React.Component {
 	            <div className="join-text">
 					<p>Get the details before the rest of the world by joining our email list.</p>
 					<form className="join-form flex-container" onSubmit={submitHandler}>
-						<input type="email" className="join-email" placeholder={this.props.email} 
-							  onChange={changeHandler} name="EMAIL" ref="em" />
+						<input type="email" className="join-email" placeholder={this.state.placeholder}
+							  onChange={changeHandler} value={this.state.email} name="EMAIL" ref="em" />
 		            	<input type="submit" className="btn btn-join" value="Join" name="submit" />
 		          	</form>
-  	        	</div>
+				</div>
 	        </div>
 		);
 	}
