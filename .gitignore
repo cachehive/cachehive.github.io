@@ -1,7 +1,7 @@
 **/node_modules/
 **/*.log
 **/*.css
-**/\!bundle!.css
+!bundle.css
 **/Thumbs.db
 **/.idea
 Procfile.test
